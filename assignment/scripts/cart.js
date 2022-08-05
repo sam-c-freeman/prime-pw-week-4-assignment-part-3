@@ -15,29 +15,29 @@ let basket = [];
 //   - add the new item to the global array `basket`. 
 //   - return `true` indicating the item was added
 
-// function addItem(item){
-//     basket.push(item);
-//     return true;
-// }
+function addItem(item){
+    basket.push(item);
+    return true;
+}
 
-// addItem('strawbery');
-// addItem('avocado');
-// addItem('apple');
-// addItem('soup');
-// addItem('cherries');
-// addItem('cereal');
-// console.log(basket);
+addItem('strawbery');
+addItem('avocado');
+addItem('apple');
+addItem('soup');
+addItem('cherries');
+addItem('cereal');
+console.log(basket);
 
 // - Create a function called `listItems`. It should:
 //   - loop over the items in the `basket` array
 //   - console.log each individual item on a new line
 
-// function listItems(array){
-//     for(let i = 0; i < array.length; i++){
-//     console.log(array[i]);
-//     }
-// }
-// listItems(basket);
+function listItems(array){
+    for(let i = 0; i < array.length; i++){
+    console.log(array[i]);
+    }
+}
+console.log(listItems(basket));
 
 // - Create a function called `empty`. It should:
 //   - reset the `basket` to an empty array
@@ -77,20 +77,20 @@ let basket = [];
 
 // 1. Add a global `const` named `maxItems` and set it to 5.
 
-const maxItems = 5;
+// const maxItems = 5;
 
-// 2. Create a function called isFull(). It should:
-//   - return `false` if the basket contains *less* than max number of items
-//   - return `true` otherwise (equal or more than maxItems)
+// // 2. Create a function called isFull(). It should:
+// //   - return `false` if the basket contains *less* than max number of items
+// //   - return `true` otherwise (equal or more than maxItems)
 
-function isFull(array){
-        if(array.length < maxItems){
-            return false;
-        }
-            return true;
-}
+// function isFull(array){
+//         if(array.length < maxItems){
+//             return false;
+//         }
+//             return true;
+// }
 
-console.log(isFull(basket));
+// console.log(isFull(basket));
 
 
 // 3. Update the required `addItem` function to:
@@ -98,23 +98,23 @@ console.log(isFull(basket));
 //   - If an item was added to the array, return `true`
 //   - If there was no room and the item could not be added return `false`
 
-function addItem(item){
-    if(isFull(basket) === false){
-    basket.push(item);
-    return true;
-    }
-    else{
-        return false;
-    }
-}
+// function addItem(item){
+//     if(isFull(basket) === false){
+//     basket.push(item);
+//     return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
 
-addItem('strawberry');
-addItem('avocado');
-addItem('apple');
-addItem('soup');
-addItem('cherries');
-addItem('cereal');
-console.log(basket);
+// addItem('strawberry');
+// addItem('avocado');
+// addItem('apple');
+// addItem('soup');
+// addItem('cherries');
+// addItem('cereal');
+// console.log(basket);
 
 
 // __Using Array built-in functions!__
@@ -125,7 +125,29 @@ console.log(basket);
 //   - Use [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) to remove the first matching item from the basket.
 //   - Return the item removed or `null` if the item was not found
 
+
+function removeItem(item){
+    let indexForItem = basket.indexOf(item);
+    // console.log(indexForItem) 
+    // console.log was just to test it was working as expected
+    if(indexForItem > -1){
+    let removedItem = basket.splice(indexForItem, 1,);
+    return removedItem;
+    } else{
+        return null;
+    }
+}
+
+
+
+    
+console.log(removeItem('milk'));
+console.log(removeItem('avocado'));
+console.log(basket);
+
 // ## Assignment Submission
 // Check in your repo, then turn in your work via the Prime Academy Assignment Application at http://primeacademy.io, as usual and don't hesitate to hit up the Slack channel as needed!
 
 // **REMINDER:** Make sure to answer the Slack discussion question for this week!
+
+
