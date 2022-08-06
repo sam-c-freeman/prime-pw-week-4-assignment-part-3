@@ -37,7 +37,7 @@ function listItems(array){
     console.log(array[i]);
     }
 }
-console.log(listItems(basket));
+listItems(basket);
 
 // - Create a function called `empty`. It should:
 //   - reset the `basket` to an empty array
@@ -51,14 +51,14 @@ console.log(listItems(basket));
 
 //My above solution worked but below is easier!
 
-// function empty(array){
-//     basket = [];
-// }
+function empty(array){
+    basket = [];
+}
 
 
 
-// empty(basket);
-// console.log(basket);
+empty(basket);
+console.log(basket);
 
 // > __IMPORTANT__
 // > Make sure that you are writing code *in the file* to test every function that you write!
@@ -77,20 +77,20 @@ console.log(listItems(basket));
 
 // 1. Add a global `const` named `maxItems` and set it to 5.
 
-// const maxItems = 5;
+const maxItems = 5;
 
 // // 2. Create a function called isFull(). It should:
 // //   - return `false` if the basket contains *less* than max number of items
 // //   - return `true` otherwise (equal or more than maxItems)
 
-// function isFull(array){
-//         if(array.length < maxItems){
-//             return false;
-//         }
-//             return true;
-// }
+function isFull(array){
+        if(array.length < maxItems){
+            return false;
+        }
+            return true;
+}
 
-// console.log(isFull(basket));
+console.log(isFull(basket));
 
 
 // 3. Update the required `addItem` function to:
@@ -98,23 +98,29 @@ console.log(listItems(basket));
 //   - If an item was added to the array, return `true`
 //   - If there was no room and the item could not be added return `false`
 
-// function addItem(item){
-//     if(isFull(basket) === false){
-//     basket.push(item);
-//     return true;
-//     }
-//     else{
-//         return false;
-//     }
-// }
+function addItemUpdated(item){
+    if(isFull(basket) === false){
+    basket.push(item);
+    return true;
+    }
+    else{
+        return false;
+    }
+}
 
-// addItem('strawberry');
-// addItem('avocado');
-// addItem('apple');
-// addItem('soup');
-// addItem('cherries');
-// addItem('cereal');
-// console.log(basket);
+addItemUpdated('strawberry');
+addItemUpdated('avocado');
+addItemUpdated('apple');
+addItemUpdated('soup');
+addItemUpdated('butter');
+addItemUpdated('ham');
+
+
+console.log(addItemUpdated(basket));
+console.log(basket);
+
+//The above code seems to work but if there are less than 5 it will still console array[4].  Is that a problem?
+//or is that like an empty space if less than 5 are added?
 
 
 // __Using Array built-in functions!__
